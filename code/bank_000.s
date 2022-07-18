@@ -12165,17 +12165,15 @@ br_00_d0f2:
 
 
 Call_00_d0f8:
-	ldx #$00.b                                                  ; $d0f8 : $a2, $00
-	ldy #$8e.b                                                  ; $d0fa : $a0, $8e
-	.db $70, $01                                                  ; $d0fc : $70, $01
-
-	lda #$8d8a.w                                                  ; $d0fe : $a9, $8a, $8d
-	adc ($01)                                                  ; $d101 : $72, $01
-	ldx #$00.b                                                  ; $d103 : $a2, $00
-	mvn $73, $8e                                                  ; $d105 : $54, $8e, $73
-	ora ($a9, X)                                                  ; $d108 : $01, $a9
-	ror $758d.w, X                                                  ; $d10a : $7e, $8d, $75
-	ora ($60, X)                                                  ; $d10d : $01, $60
+	ldx #$a000.w                                                  ; $d0f8 : $a2, $00, $a0
+	stx $0170.w                                                  ; $d0fb : $8e, $70, $01
+	lda #$8a.b                                                  ; $d0fe : $a9, $8a
+	sta $0172.W                                                  ; $d100 : $8d, $72, $01
+	ldx #$5400.w                                                  ; $d103 : $a2, $00, $54
+	stx $0173.w                                                  ; $d106 : $8e, $73, $01
+	lda #$7e.b                                                  ; $d109 : $a9, $7e
+	sta $0175.w                                                  ; $d10b : $8d, $75, $01
+	rts                                                  ; $d10e : $60
 
 
 Func_0_d10f:
@@ -12202,7 +12200,7 @@ Func_0_d10f:
 	tay                                                  ; $d142 : $a8
 	lda [$1a], Y                                                  ; $d143 : $b7, $1a
 	tay                                                  ; $d145 : $a8
-	beq br_00_d1a8                                                  ; $d146 : $f0, $60
+	beq @br_d1a8                                                  ; $d146 : $f0, $60
 
 	dey                                                  ; $d148 : $88
 	lda [$1a], Y                                                  ; $d149 : $b7, $1a
@@ -12217,7 +12215,7 @@ Func_0_d10f:
 	and #$fff0.w                                                  ; $d15f : $29, $f0, $ff
 	sta $017a.w                                                  ; $d162 : $8d, $7a, $01
 
-br_00_d165:
+@loop_d165:
 	sty $017c.w                                                  ; $d165 : $8c, $7c, $01
 	lda [$1a], Y                                                  ; $d168 : $b7, $1a
 	tax                                                  ; $d16a : $aa
@@ -12226,41 +12224,41 @@ br_00_d165:
 	lda [$1a], Y                                                  ; $d16d : $b7, $1a
 	and #$fff0.w                                                  ; $d16f : $29, $f0, $ff
 	cmp $017a.w                                                  ; $d172 : $cd, $7a, $01
-	bne br_00_d199                                                  ; $d175 : $d0, $22
+	bne @br_d199                                                  ; $d175 : $d0, $22
 
 	lda [$1a], Y                                                  ; $d177 : $b7, $1a
 	and #$000f.w                                                  ; $d179 : $29, $0f, $00
 	cmp #$0007.w                                                  ; $d17c : $c9, $07, $00
-	bne br_00_d18e                                                  ; $d17f : $d0, $0d
+	bne @br_d18e                                                  ; $d17f : $d0, $0d
 
 	clc                                                  ; $d181 : $18
 	txa                                                  ; $d182 : $8a
 	adc #$0010.w                                                  ; $d183 : $69, $10, $00
 	and #$fff0.w                                                  ; $d186 : $29, $f0, $ff
 	cmp $0178.w                                                  ; $d189 : $cd, $78, $01
-	beq br_00_d1c2                                                  ; $d18c : $f0, $34
+	beq @br_d1c2                                                  ; $d18c : $f0, $34
 
-br_00_d18e:
+@br_d18e:
 	txa                                                  ; $d18e : $8a
 	and #$fff0.w                                                  ; $d18f : $29, $f0, $ff
 	cmp $0178.w                                                  ; $d192 : $cd, $78, $01
-	bne br_00_d199                                                  ; $d195 : $d0, $02
+	bne @br_d199                                                  ; $d195 : $d0, $02
 
-	bra br_00_d1c2                                                  ; $d197 : $80, $29
+	bra @br_d1c2                                                  ; $d197 : $80, $29
 
-br_00_d199:
+@br_d199:
 	txa                                                  ; $d199 : $8a
 	bit #$0001.w                                                  ; $d19a : $89, $01, $00
-	bne br_00_d1a8                                                  ; $d19d : $d0, $09
+	bne @br_d1a8                                                  ; $d19d : $d0, $09
 
 	iny                                                  ; $d19f : $c8
 	iny                                                  ; $d1a0 : $c8
 	iny                                                  ; $d1a1 : $c8
 	iny                                                  ; $d1a2 : $c8
 	inc $017e.w                                                  ; $d1a3 : $ee, $7e, $01
-	bra br_00_d165                                                  ; $d1a6 : $80, $bd
+	bra @loop_d165                                                  ; $d1a6 : $80, $bd
 
-br_00_d1a8:
+@br_d1a8:
 	sep #$20.b                                                  ; $d1a8 : $e2, $20
 	ldx $0170.w                                                  ; $d1aa : $ae, $70, $01
 	stx $001a.w                                                  ; $d1ad : $8e, $1a, $00
@@ -12273,21 +12271,17 @@ br_00_d1a8:
 	clc                                                  ; $d1c0 : $18
 	rtl                                                  ; $d1c1 : $6b
 
-
-br_00_d1c2:
+@br_d1c2:
 	lda $00017f.l                                                  ; $d1c2 : $af, $7f, $01, $00
-	and #$ff.b                                                  ; $d1c6 : $29, $ff
-	.db $00                                                  ; $d1c8 : $00
+	and #$00ff.w                                                  ; $d1c6 : $29, $ff, $00
 	tay                                                  ; $d1c9 : $a8
 	lda $00017e.l                                                  ; $d1ca : $af, $7e, $01, $00
-	and #$07.b                                                  ; $d1ce : $29, $07
-	.db $00                                                  ; $d1d0 : $00
+	and #$0007.w                                                  ; $d1ce : $29, $07, $00
 	tax                                                  ; $d1d1 : $aa
 	lda [$1d], Y                                                  ; $d1d2 : $b7, $1d
-	and #$ff.b                                                  ; $d1d4 : $29, $ff
-	.db $00                                                  ; $d1d6 : $00
+	and #$00ff.w                                                  ; $d1d4 : $29, $ff, $00
 	bit $9ac2.w, X                                                  ; $d1d7 : $3c, $c2, $9a
-	bne br_00_d1a8                                                  ; $d1da : $d0, $cc
+	bne @br_d1a8                                                  ; $d1da : $d0, $cc
 
 	sep #$20.b                                                  ; $d1dc : $e2, $20
 	ldx $0170.w                                                  ; $d1de : $ae, $70, $01
@@ -12302,6 +12296,7 @@ br_00_d1c2:
 	rtl                                                  ; $d1f5 : $6b
 
 
+;
 	phd                                                  ; $d1f6 : $0b
 	ldy #$00.b                                                  ; $d1f7 : $a0, $00
 	.db $00                                                  ; $d1f9 : $00
