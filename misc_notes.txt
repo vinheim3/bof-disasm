@@ -1,0 +1,27 @@
+3 top tile is $60 in $9cd8
+
+0:8580 - dma routine
+copies from 7e:2000 to vram 9800 (top of 3 is 7e:24d8)
+
+0:ba8f copies 2 tiles from 1:8905 offset cc for 3 (cc = 33*4 ie ascii 3)
+
+0:b61b loads X=2 from 00 (f40) to jump to Func_0_b9ff
+
+0:b9ff reads a byte from [$18] eg from f58 eg a7:f21c (which has 300 in ascii)
+
+0:b87c sets $18 to a7:f21c from 7e:5a43 (idx $16)
+02 at this point is 8e:ce15
+prev byte was 8e:ce14 which had 1, 1 calls b851, which reads from 7e:5a40
+
+$a7 written to 7e:54a3 via 8f:ec74
+
+at f:ec65
+the called routine has 0001 = 1, and with $30 makes 0 (put in X)
+lda 92f4 makes 0e, and that is stored in 0002
+14:e87d multiplies 0000 (2) with 0002 (e) to get result in 0004/5 (1c)
+92f2 idxed X (f200) = f21c
+
+0/4/8/c based on if 1 is 00/10/20/30
+so 0000 * (92f4(low) + 0/4/8/c) + (92f2(hi) + 0/4/8/c) = address in bank a7
+
+7:93fd eg X = 85b, pulls from 0a:a85f (2=>0000 annd 1=>0001 used above)
