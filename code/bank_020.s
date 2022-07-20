@@ -2666,7 +2666,7 @@ br_20_958b:
 	inc $ff36.w, X                                                  ; $95a5 : $fe, $36, $ff
 	rol $1dff.w, X                                                  ; $95a8 : $3e, $ff, $1d
 	inc $34, X                                                  ; $95ab : $f6, $34
-	sep #$20.b                                                  ; $95ad : $e2, $20
+	sep #ACCU_8                                                  ; $95ad : $e2, $20
 	sbc $fb3ffe.l, X                                                  ; $95af : $ff, $fe, $3f, $fb
 	cmp [$f6], Y                                                  ; $95b3 : $d7, $f6
 	lda $efefb6.l                                                  ; $95b5 : $af, $b6, $ef, $ef
@@ -17813,7 +17813,7 @@ br_20_f2b6:
 
 
 	ora ($40, X)                                                  ; $f2c6 : $01, $40
-	rep #$20.b                                                  ; $f2c8 : $c2, $20
+	rep #ACCU_8                                                  ; $f2c8 : $c2, $20
 	lsr $0020.w                                                  ; $f2ca : $4e, $20, $00
 	asl                                                  ; $f2cd : $0a
 	tax                                                  ; $f2ce : $aa

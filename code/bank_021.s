@@ -5693,7 +5693,7 @@ br_21_a2d1:
 	wdm                                                  ; $a2e1 : $42
 	sta ($26, X)                                                  ; $a2e2 : $81, $26
 	cmp $15                                                  ; $a2e4 : $c5, $15
-	sep #$20.b                                                  ; $a2e6 : $e2, $20
+	sep #ACCU_8                                                  ; $a2e6 : $e2, $20
 	sec                                                  ; $a2e8 : $38
 	stx $3e                                                  ; $a2e9 : $86, $3e
 	sta $7ed23f.l                                                  ; $a2eb : $8f, $3f, $d2, $7e

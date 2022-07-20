@@ -16976,7 +16976,7 @@ br_10_f7fb:
 	ldx #$14.b                                                  ; $f95b : $a2, $14
 	.db $00                                                  ; $f95d : $00
 	jsr $808995.l                                                  ; $f95e : $22, $95, $89, $80
-	rep #$20.b                                                  ; $f962 : $c2, $20
+	rep #ACCU_8                                                  ; $f962 : $c2, $20
 	ply                                                  ; $f964 : $7a
 	plx                                                  ; $f965 : $fa
 	rtl                                                  ; $f966 : $6b
@@ -16986,10 +16986,10 @@ br_10_f7fb:
 	.db $00                                                  ; $f969 : $00
 
 br_10_f96a:
-	rep #$20.b                                                  ; $f96a : $c2, $20
+	rep #ACCU_8                                                  ; $f96a : $c2, $20
 	lda $81903f.l, X                                                  ; $f96c : $bf, $3f, $90, $81
 	tay                                                  ; $f970 : $a8
-	sep #$20.b                                                  ; $f971 : $e2, $20
+	sep #ACCU_8                                                  ; $f971 : $e2, $20
 	lda $0fbf.w                                                  ; $f973 : $ad, $bf, $0f
 	bpl br_10_f980                                                  ; $f976 : $10, $08
 
@@ -17076,12 +17076,12 @@ br_10_f9df:
 	bra br_10_f9da                                                  ; $f9f2 : $80, $e6
 
 br_10_f9f4:
-	rep #$20.b                                                  ; $f9f4 : $c2, $20
+	rep #ACCU_8                                                  ; $f9f4 : $c2, $20
 	lda $007c.w, Y                                                  ; $f9f6 : $b9, $7c, $00
 	sta $0006.w, Y                                                  ; $f9f9 : $99, $06, $00
 	lda $007e.w, Y                                                  ; $f9fc : $b9, $7e, $00
 	sta $0009.w, Y                                                  ; $f9ff : $99, $09, $00
-	sep #$20.b                                                  ; $fa02 : $e2, $20
+	sep #ACCU_8                                                  ; $fa02 : $e2, $20
 	plx                                                  ; $fa04 : $fa
 	bra br_10_fa2b                                                  ; $fa05 : $80, $24
 
@@ -17098,12 +17098,12 @@ br_10_fa0e:
 	lda #$80.b                                                  ; $fa11 : $a9, $80
 	sta $0002.w                                                  ; $fa13 : $8d, $02, $00
 	jsr Func_14_e87d.l                                                  ; $fa16 : $22, $7d, $e8, $94
-	rep #$20.b                                                  ; $fa1a : $c2, $20
+	rep #ACCU_8                                                  ; $fa1a : $c2, $20
 	lda #$1580.w                                                  ; $fa1c : $a9, $80, $15
 	clc                                                  ; $fa1f : $18
 	adc $0004.w                                                  ; $fa20 : $6d, $04, $00
 	tay                                                  ; $fa23 : $a8
-	sep #$20.b                                                  ; $fa24 : $e2, $20
+	sep #ACCU_8                                                  ; $fa24 : $e2, $20
 	lda $0049.w, Y                                                  ; $fa26 : $b9, $49, $00
 	bmi br_10_f9da                                                  ; $fa29 : $30, $af
 
@@ -17164,13 +17164,13 @@ br_10_fa86:
 	bit #$40.b                                                  ; $fa89 : $89, $40
 	beq br_10_fab0                                                  ; $fa8b : $f0, $23
 
-	rep #$20.b                                                  ; $fa8d : $c2, $20
+	rep #ACCU_8                                                  ; $fa8d : $c2, $20
 	lda $0076.w, Y                                                  ; $fa8f : $b9, $76, $00
 	sec                                                  ; $fa92 : $38
 	sbc #$0040.w                                                  ; $fa93 : $e9, $40, $00
 	sta $0076.w, Y                                                  ; $fa96 : $99, $76, $00
 	and #$01c0.w                                                  ; $fa99 : $29, $c0, $01
-	sep #$20.b                                                  ; $fa9c : $e2, $20
+	sep #ACCU_8                                                  ; $fa9c : $e2, $20
 	bne br_10_fab0                                                  ; $fa9e : $d0, $10
 
 	lda $0074.w, Y                                                  ; $faa0 : $b9, $74, $00
@@ -17219,12 +17219,12 @@ br_10_fae8:
 
 	and #$df.b                                                  ; $faef : $29, $df
 	sta $0075.w, Y                                                  ; $faf1 : $99, $75, $00
-	rep #$20.b                                                  ; $faf4 : $c2, $20
+	rep #ACCU_8                                                  ; $faf4 : $c2, $20
 	lda $005d.w, Y                                                  ; $faf6 : $b9, $5d, $00
 	sec                                                  ; $faf9 : $38
 	sbc #$0014.w                                                  ; $fafa : $e9, $14, $00
 	sta $005d.w, Y                                                  ; $fafd : $99, $5d, $00
-	sep #$20.b                                                  ; $fb00 : $e2, $20
+	sep #ACCU_8                                                  ; $fb00 : $e2, $20
 
 br_10_fb02:
 	jmp Jump_10_f9da.w                                                  ; $fb02 : $4c, $da, $f9
@@ -17232,12 +17232,12 @@ br_10_fb02:
 
 Call_10_fb05:
 	asl                                                  ; $fb05 : $0a
-	rep #$20.b                                                  ; $fb06 : $c2, $20
+	rep #ACCU_8                                                  ; $fb06 : $c2, $20
 	and #$00ff.w                                                  ; $fb08 : $29, $ff, $00
 	tax                                                  ; $fb0b : $aa
 	lda $81903f.l, X                                                  ; $fb0c : $bf, $3f, $90, $81
 	tax                                                  ; $fb10 : $aa
-	sep #$20.b                                                  ; $fb11 : $e2, $20
+	sep #ACCU_8                                                  ; $fb11 : $e2, $20
 	rtl                                                  ; $fb13 : $6b
 
 
@@ -17260,14 +17260,14 @@ br_10_fb31:
 	lda #$be.b                                                  ; $fb31 : $a9, $be
 
 Call_10_fb33:
-	rep #$20.b                                                  ; $fb33 : $c2, $20
+	rep #ACCU_8                                                  ; $fb33 : $c2, $20
 	and #$00ff.w                                                  ; $fb35 : $29, $ff, $00
 	clc                                                  ; $fb38 : $18
 	adc $0016.w                                                  ; $fb39 : $6d, $16, $00
 	tax                                                  ; $fb3c : $aa
 
 Call_10_fb3d:
-	rep #$20.b                                                  ; $fb3d : $c2, $20
+	rep #ACCU_8                                                  ; $fb3d : $c2, $20
 
 br_10_fb3f:
 	lda $7e2000.l, X                                                  ; $fb3f : $bf, $00, $20, $7e
@@ -17277,7 +17277,7 @@ br_10_fb3f:
 	dey                                                  ; $fb49 : $88
 	bne br_10_fb3f                                                  ; $fb4a : $d0, $f3
 
-	sep #$20.b                                                  ; $fb4c : $e2, $20
+	sep #ACCU_8                                                  ; $fb4c : $e2, $20
 	rtl                                                  ; $fb4e : $6b
 
 
@@ -17299,14 +17299,14 @@ br_10_fb4f:
 	bra br_10_fb31                                                  ; $fb6e : $80, $c1
 
 Call_10_fb70:
-	rep #$20.b                                                  ; $fb70 : $c2, $20
+	rep #ACCU_8                                                  ; $fb70 : $c2, $20
 	and #$00ff.w                                                  ; $fb72 : $29, $ff, $00
 	clc                                                  ; $fb75 : $18
 	adc $0016.w                                                  ; $fb76 : $6d, $16, $00
 	tax                                                  ; $fb79 : $aa
 
 Call_10_fb7a:
-	rep #$20.b                                                  ; $fb7a : $c2, $20
+	rep #ACCU_8                                                  ; $fb7a : $c2, $20
 
 br_10_fb7c:
 	lda $7e2000.l, X                                                  ; $fb7c : $bf, $00, $20, $7e
@@ -17316,7 +17316,7 @@ br_10_fb7c:
 	dey                                                  ; $fb86 : $88
 	bne br_10_fb7c                                                  ; $fb87 : $d0, $f3
 
-	sep #$20.b                                                  ; $fb89 : $e2, $20
+	sep #ACCU_8                                                  ; $fb89 : $e2, $20
 	rtl                                                  ; $fb8b : $6b
 
 
@@ -17338,14 +17338,14 @@ br_10_fb7c:
 	sta $0000.w                                                  ; $fba8 : $8d, $00, $00
 	stz $0001.w                                                  ; $fbab : $9c, $01, $00
 	xba                                                  ; $fbae : $eb
-	rep #$20.b                                                  ; $fbaf : $c2, $20
+	rep #ACCU_8                                                  ; $fbaf : $c2, $20
 	and #$00ff.w                                                  ; $fbb1 : $29, $ff, $00
 	asl                                                  ; $fbb4 : $0a
 	asl                                                  ; $fbb5 : $0a
 	asl                                                  ; $fbb6 : $0a
 	asl                                                  ; $fbb7 : $0a
 	cmp $0000.w                                                  ; $fbb8 : $cd, $00, $00
-	sep #$20.b                                                  ; $fbbb : $e2, $20
+	sep #ACCU_8                                                  ; $fbbb : $e2, $20
 	bcc br_10_fbf4                                                  ; $fbbd : $90, $35
 
 br_10_fbbf:
@@ -17377,11 +17377,11 @@ br_10_fbd6:
 br_10_fbe3:
 	stz $0001.w                                                  ; $fbe3 : $9c, $01, $00
 	xba                                                  ; $fbe6 : $eb
-	rep #$20.b                                                  ; $fbe7 : $c2, $20
+	rep #ACCU_8                                                  ; $fbe7 : $c2, $20
 	and #$00ff.w                                                  ; $fbe9 : $29, $ff, $00
 	asl                                                  ; $fbec : $0a
 	cmp $0000.w                                                  ; $fbed : $cd, $00, $00
-	sep #$20.b                                                  ; $fbf0 : $e2, $20
+	sep #ACCU_8                                                  ; $fbf0 : $e2, $20
 	bcs br_10_fbfd                                                  ; $fbf2 : $b0, $09
 
 br_10_fbf4:
@@ -17404,12 +17404,12 @@ br_10_fbfd:
 	bpl br_10_fc17                                                  ; $fc09 : $10, $0c
 
 br_10_fc0b:
-	rep #$20.b                                                  ; $fc0b : $c2, $20
+	rep #ACCU_8                                                  ; $fc0b : $c2, $20
 	txa                                                  ; $fc0d : $8a
 	clc                                                  ; $fc0e : $18
 	adc #$0080.w                                                  ; $fc0f : $69, $80, $00
 	tax                                                  ; $fc12 : $aa
-	sep #$20.b                                                  ; $fc13 : $e2, $20
+	sep #ACCU_8                                                  ; $fc13 : $e2, $20
 	.db $80, $ea                                                  ; $fc15 : $80, $ea
 
 br_10_fc17:
@@ -17422,13 +17422,13 @@ br_10_fc17:
 	cmp #$30.b                                                  ; $fc1f : $c9, $30
 	bcs br_10_fc5c                                                  ; $fc21 : $b0, $39
 
-	rep #$20.b                                                  ; $fc23 : $c2, $20
+	rep #ACCU_8                                                  ; $fc23 : $c2, $20
 	tya                                                  ; $fc25 : $98
 	clc                                                  ; $fc26 : $18
 	adc #$00a0.w                                                  ; $fc27 : $69, $a0, $00
 	tay                                                  ; $fc2a : $a8
 	cmp #$1280.w                                                  ; $fc2b : $c9, $80, $12
-	sep #$20.b                                                  ; $fc2e : $e2, $20
+	sep #ACCU_8                                                  ; $fc2e : $e2, $20
 	.db $90, $e8                                                  ; $fc30 : $90, $e8
 
 	lda $27                                                  ; $fc32 : $a5, $27
@@ -17442,12 +17442,12 @@ br_10_fc38:
 	txy                                                  ; $fc3c : $9b
 
 br_10_fc3d:
-	rep #$20.b                                                  ; $fc3d : $c2, $20
+	rep #ACCU_8                                                  ; $fc3d : $c2, $20
 	tya                                                  ; $fc3f : $98
 	clc                                                  ; $fc40 : $18
 	adc #$0080.w                                                  ; $fc41 : $69, $80, $00
 	tay                                                  ; $fc44 : $a8
-	sep #$20.b                                                  ; $fc45 : $e2, $20
+	sep #ACCU_8                                                  ; $fc45 : $e2, $20
 	lda $0000.w, Y                                                  ; $fc47 : $b9, $00, $00
 	beq br_10_fc3d                                                  ; $fc4a : $f0, $f1
 
@@ -17518,7 +17518,7 @@ br_10_fca4:
 
 
 br_10_fcac:
-	rep #$20.b                                                  ; $fcac : $c2, $20
+	rep #ACCU_8                                                  ; $fcac : $c2, $20
 	stx $0f9a.w                                                  ; $fcae : $8e, $9a, $0f
 	phd                                                  ; $fcb1 : $0b
 	pla                                                  ; $fcb2 : $68
@@ -17527,7 +17527,7 @@ br_10_fcac:
 	sta $0010.w, X                                                  ; $fcb9 : $9d, $10, $00
 	lda #$0080.w                                                  ; $fcbc : $a9, $80, $00
 	sta $0020.w, X                                                  ; $fcbf : $9d, $20, $00
-	sep #$20.b                                                  ; $fcc2 : $e2, $20
+	sep #ACCU_8                                                  ; $fcc2 : $e2, $20
 	lda #$01.b                                                  ; $fcc4 : $a9, $01
 	sta $0000.w, X                                                  ; $fcc6 : $9d, $00, $00
 	lda $1e                                                  ; $fcc9 : $a5, $1e
@@ -17574,7 +17574,7 @@ br_10_fd0a:
 	inc $d6, X                                                  ; $fd19 : $f6, $d6
 	.db $80, $6b                                                  ; $fd1b : $80, $6b
 
-	rep #$20.b                                                  ; $fd1d : $c2, $20
+	rep #ACCU_8                                                  ; $fd1d : $c2, $20
 	lda #$2003.w                                                  ; $fd1f : $a9, $03, $20
 
 br_10_fd22:
@@ -17585,7 +17585,7 @@ br_10_fd22:
 	dey                                                  ; $fd2c : $88
 	bne br_10_fd22                                                  ; $fd2d : $d0, $f3
 
-	sep #$20.b                                                  ; $fd2f : $e2, $20
+	sep #ACCU_8                                                  ; $fd2f : $e2, $20
 
 br_10_fd31:
 	rtl                                                  ; $fd31 : $6b
@@ -17603,14 +17603,14 @@ br_10_fd35:
 	bcc br_10_fd5b                                                  ; $fd3d : $90, $1c
 
 	asl                                                  ; $fd3f : $0a
-	rep #$20.b                                                  ; $fd40 : $c2, $20
+	rep #ACCU_8                                                  ; $fd40 : $c2, $20
 	and #$00ff.w                                                  ; $fd42 : $29, $ff, $00
 	tax                                                  ; $fd45 : $aa
 	lda $81efd8.l, X                                                  ; $fd46 : $bf, $d8, $ef, $81
 	clc                                                  ; $fd4a : $18
 	adc #$1580.w                                                  ; $fd4b : $69, $80, $15
 	tax                                                  ; $fd4e : $aa
-	sep #$20.b                                                  ; $fd4f : $e2, $20
+	sep #ACCU_8                                                  ; $fd4f : $e2, $20
 	lda $0049.w, X                                                  ; $fd51 : $bd, $49, $00
 	bpl br_10_fd5b                                                  ; $fd54 : $10, $05
 
@@ -17634,24 +17634,24 @@ br_10_fd5b:
 
 br_10_fd6d:
 	pha                                                  ; $fd6d : $48
-	rep #$20.b                                                  ; $fd6e : $c2, $20
+	rep #ACCU_8                                                  ; $fd6e : $c2, $20
 	lda $006a.w, Y                                                  ; $fd70 : $b9, $6a, $00
 	sta $0000.w                                                  ; $fd73 : $8d, $00, $00
-	sep #$20.b                                                  ; $fd76 : $e2, $20
+	sep #ACCU_8                                                  ; $fd76 : $e2, $20
 	jsr Call_10_fd9d.w                                                  ; $fd78 : $20, $9d, $fd
 	bne br_10_fda8                                                  ; $fd7b : $d0, $2b
 
-	rep #$20.b                                                  ; $fd7d : $c2, $20
+	rep #ACCU_8                                                  ; $fd7d : $c2, $20
 	lda $006c.w, Y                                                  ; $fd7f : $b9, $6c, $00
 	sta $0000.w                                                  ; $fd82 : $8d, $00, $00
-	sep #$20.b                                                  ; $fd85 : $e2, $20
+	sep #ACCU_8                                                  ; $fd85 : $e2, $20
 	jsr Call_10_fd9d.w                                                  ; $fd87 : $20, $9d, $fd
 	bne br_10_fda8                                                  ; $fd8a : $d0, $1c
 
-	rep #$20.b                                                  ; $fd8c : $c2, $20
+	rep #ACCU_8                                                  ; $fd8c : $c2, $20
 	lda $006e.w, Y                                                  ; $fd8e : $b9, $6e, $00
 	sta $0000.w                                                  ; $fd91 : $8d, $00, $00
-	sep #$20.b                                                  ; $fd94 : $e2, $20
+	sep #ACCU_8                                                  ; $fd94 : $e2, $20
 	jsr Call_10_fd9d.w                                                  ; $fd96 : $20, $9d, $fd
 	bne br_10_fda8                                                  ; $fd99 : $d0, $0d
 
@@ -17672,7 +17672,7 @@ br_10_fda8:
 	bit $0000.w                                                  ; $fdac : $2c, $00, $00
 	beq br_10_fdc7                                                  ; $fdaf : $f0, $16
 
-	rep #$20.b                                                  ; $fdb1 : $c2, $20
+	rep #ACCU_8                                                  ; $fdb1 : $c2, $20
 	lda $0f14.w                                                  ; $fdb3 : $ad, $14, $0f
 	lsr                                                  ; $fdb6 : $4a
 	lsr                                                  ; $fdb7 : $4a
@@ -17681,7 +17681,7 @@ br_10_fda8:
 	lda $0f14.w                                                  ; $fdbc : $ad, $14, $0f
 	sbc $0000.w                                                  ; $fdbf : $ed, $00, $00
 	sta $0f14.w                                                  ; $fdc2 : $8d, $14, $0f
-	sep #$20.b                                                  ; $fdc5 : $e2, $20
+	sep #ACCU_8                                                  ; $fdc5 : $e2, $20
 
 br_10_fdc7:
 	rtl                                                  ; $fdc7 : $6b
@@ -17703,14 +17703,14 @@ br_10_fdc7:
 	dea                                                  ; $fddc : $3a
 	asl                                                  ; $fddd : $0a
 	tax                                                  ; $fdde : $aa
-	rep #$20.b                                                  ; $fddf : $c2, $20
+	rep #ACCU_8                                                  ; $fddf : $c2, $20
 	lda $81903f.l, X                                                  ; $fde1 : $bf, $3f, $90, $81
 	pha                                                  ; $fde5 : $48
 	tyx                                                  ; $fde6 : $bb
 	lda $81903f.l, X                                                  ; $fde7 : $bf, $3f, $90, $81
 	tax                                                  ; $fdeb : $aa
 	ply                                                  ; $fdec : $7a
-	sep #$20.b                                                  ; $fded : $e2, $20
+	sep #ACCU_8                                                  ; $fded : $e2, $20
 	lda $007a.w, X                                                  ; $fdef : $bd, $7a, $00
 	xba                                                  ; $fdf2 : $eb
 	lda $007a.w, Y                                                  ; $fdf3 : $b9, $7a, $00
@@ -17751,7 +17751,7 @@ br_10_fe15:
 	lda $1c                                                  ; $fe25 : $a5, $1c
 	sta $0000.w                                                  ; $fe27 : $8d, $00, $00
 	jsr Func_14_e87d.l                                                  ; $fe2a : $22, $7d, $e8, $94
-	rep #$20.b                                                  ; $fe2e : $c2, $20
+	rep #ACCU_8                                                  ; $fe2e : $c2, $20
 	lda $8b9700.l, X                                                  ; $fe30 : $bf, $00, $97, $8b
 	clc                                                  ; $fe34 : $18
 	adc $0004.w                                                  ; $fe35 : $6d, $04, $00
@@ -17759,7 +17759,7 @@ br_10_fe15:
 	lda $8b970a.l, X                                                  ; $fe39 : $bf, $0a, $97, $8b
 	dea                                                  ; $fe3d : $3a
 	cmp $0052.w, Y                                                  ; $fe3e : $d9, $52, $00
-	sep #$20.b                                                  ; $fe41 : $e2, $20
+	sep #ACCU_8                                                  ; $fe41 : $e2, $20
 	rtl                                                  ; $fe43 : $6b
 
 
@@ -17854,7 +17854,7 @@ br_10_fec7:
 	rtl                                                  ; $fec7 : $6b
 
 
-	rep #$20.b                                                  ; $fec8 : $c2, $20
+	rep #ACCU_8                                                  ; $fec8 : $c2, $20
 	and #$00ff.w                                                  ; $feca : $29, $ff, $00
 	sta $0002.w                                                  ; $fecd : $8d, $02, $00
 	stz $0000.w                                                  ; $fed0 : $9c, $00, $00
@@ -17885,7 +17885,7 @@ br_10_fef4:
 	bra br_10_fee4                                                  ; $fef7 : $80, $eb
 
 br_10_fef9:
-	sep #$20.b                                                  ; $fef9 : $e2, $20
+	sep #ACCU_8                                                  ; $fef9 : $e2, $20
 	rtl                                                  ; $fefb : $6b
 
 
@@ -17918,7 +17918,7 @@ Call_10_ff20:
 	cmp #$80.b                                                  ; $ff25 : $c9, $80
 	bne br_10_ff4b                                                  ; $ff27 : $d0, $22
 
-	rep #$20.b                                                  ; $ff29 : $c2, $20
+	rep #ACCU_8                                                  ; $ff29 : $c2, $20
 	lda $13                                                  ; $ff2b : $a5, $13
 	and #$00ff.w                                                  ; $ff2d : $29, $ff, $00
 	sta $13                                                  ; $ff30 : $85, $13
@@ -17935,14 +17935,14 @@ Call_10_ff20:
 
 br_10_ff46:
 	sta $0f9a.w                                                  ; $ff46 : $8d, $9a, $0f
-	sep #$20.b                                                  ; $ff49 : $e2, $20
+	sep #ACCU_8                                                  ; $ff49 : $e2, $20
 
 br_10_ff4b:
 	rtl                                                  ; $ff4b : $6b
 
 
 br_10_ff4c:
-	rep #$20.b                                                  ; $ff4c : $c2, $20
+	rep #ACCU_8                                                  ; $ff4c : $c2, $20
 	lda $13                                                  ; $ff4e : $a5, $13
 
 Call_10_ff50:
@@ -17961,7 +17961,7 @@ Call_10_ff50:
 
 br_10_ff69:
 	sta $0f92.w                                                  ; $ff69 : $8d, $92, $0f
-	sep #$20.b                                                  ; $ff6c : $e2, $20
+	sep #ACCU_8                                                  ; $ff6c : $e2, $20
 	rtl                                                  ; $ff6e : $6b
 
 
@@ -17999,10 +17999,10 @@ Call_10_ff8e:
 
 	lda $0f31.w, X                                                  ; $ff95 : $bd, $31, $0f
 	asl                                                  ; $ff98 : $0a
-	rep #$20.b                                                  ; $ff99 : $c2, $20
+	rep #ACCU_8                                                  ; $ff99 : $c2, $20
 	and #$00ff.w                                                  ; $ff9b : $29, $ff, $00
 	tax                                                  ; $ff9e : $aa
-	sep #$20.b                                                  ; $ff9f : $e2, $20
+	sep #ACCU_8                                                  ; $ff9f : $e2, $20
 	lda $7e5141.l, X                                                  ; $ffa1 : $bf, $41, $51, $7e
 	ina                                                  ; $ffa5 : $1a
 	sta $7e5141.l, X                                                  ; $ffa6 : $9f, $41, $51, $7e
@@ -18028,24 +18028,24 @@ br_10_ffbd:
 	bit #$10.b                                                  ; $ffc0 : $89, $10
 	bne br_10_ffd1                                                  ; $ffc2 : $d0, $0d
 
-	rep #$20.b                                                  ; $ffc4 : $c2, $20
+	rep #ACCU_8                                                  ; $ffc4 : $c2, $20
 	txa                                                  ; $ffc6 : $8a
 	sta $1e                                                  ; $ffc7 : $85, $1e
 	sta $003c.w, Y                                                  ; $ffc9 : $99, $3c, $00
 	tax                                                  ; $ffcc : $aa
-	sep #$20.b                                                  ; $ffcd : $e2, $20
+	sep #ACCU_8                                                  ; $ffcd : $e2, $20
 	clc                                                  ; $ffcf : $18
 	rtl                                                  ; $ffd0 : $6b
 
 
 br_10_ffd1:
-	rep #$20.b                                                  ; $ffd1 : $c2, $20
+	rep #ACCU_8                                                  ; $ffd1 : $c2, $20
 	txa                                                  ; $ffd3 : $8a
 	clc                                                  ; $ffd4 : $18
 	adc #$00a0.w                                                  ; $ffd5 : $69, $a0, $00
 	tax                                                  ; $ffd8 : $aa
 	cmp #$1280.w                                                  ; $ffd9 : $c9, $80, $12
-	sep #$20.b                                                  ; $ffdc : $e2, $20
+	sep #ACCU_8                                                  ; $ffdc : $e2, $20
 	.db $90, $d1                                                  ; $ffde : $90, $d1
 
 	rtl                                                  ; $ffe0 : $6b

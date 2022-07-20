@@ -3007,7 +3007,7 @@ br_11_954f:
 	cop $20.b                                                  ; $95c8 : $02, $20
 	cpy #$20.b                                                  ; $95ca : $c0, $20
 	cmp ($20, X)                                                  ; $95cc : $c1, $20
-	rep #$20.b                                                  ; $95ce : $c2, $20
+	rep #ACCU_8                                                  ; $95ce : $c2, $20
 	cmp $20, S                                                  ; $95d0 : $c3, $20
 	cpy $20                                                  ; $95d2 : $c4, $20
 	cmp $20                                                  ; $95d4 : $c5, $20
@@ -5073,7 +5073,7 @@ Call_11_a432:
 	eor ($ee, S), Y                                                  ; $a4e5 : $53, $ee
 	jsr $0284.w                                                  ; $a4e7 : $20, $84, $02
 	trb $31                                                  ; $a4ea : $14, $31
-	sep #$20.b                                                  ; $a4ec : $e2, $20
+	sep #ACCU_8                                                  ; $a4ec : $e2, $20
 	ora $1ed1.w, X                                                  ; $a4ee : $1d, $d1, $1e
 	sei                                                  ; $a4f1 : $78
 	wdm                                                  ; $a4f2 : $42
@@ -6877,7 +6877,7 @@ br_11_b2b3:
 	txs                                                  ; $b340 : $9a
 	pld                                                  ; $b341 : $2b
 	dec $0c27.w, X                                                  ; $b342 : $de, $27, $0c
-	sep #$20.b                                                  ; $b345 : $e2, $20
+	sep #ACCU_8                                                  ; $b345 : $e2, $20
 	tsb $aae3.w                                                  ; $b347 : $0c, $e3, $aa
 	ora $ed1113.l                                                  ; $b34a : $0f, $13, $11, $ed
 	ora $dc20f2.l, X                                                  ; $b34e : $1f, $f2, $20, $dc
@@ -11713,7 +11713,7 @@ br_11_d773:
 	tsx                                                  ; $d77f : $ba
 	sbc $0e24.w, X                                                  ; $d780 : $fd, $24, $0e
 	sbc ($3e), Y                                                  ; $d783 : $f1, $3e
-	rep #$20.b                                                  ; $d785 : $c2, $20
+	rep #ACCU_8                                                  ; $d785 : $c2, $20
 	sbc $fe01b6.l, X                                                  ; $d787 : $ff, $b6, $01, $fe
 	sbc ($11)                                                  ; $d78b : $f2, $11
 	asl $32cf.w, X                                                  ; $d78d : $1e, $cf, $32
@@ -14141,7 +14141,7 @@ Call_11_eaf1:
 	trb $1d                                                  ; $eb07 : $14, $1d
 	cmp $fd8a12.l, X                                                  ; $eb09 : $df, $12, $8a, $fd
 	sep #$30.b                                                  ; $eb0d : $e2, $30
-	sep #$20.b                                                  ; $eb0f : $e2, $20
+	sep #ACCU_8                                                  ; $eb0f : $e2, $20
 	eor ($bd, S), Y                                                  ; $eb11 : $53, $bd
 	bmi br_11_eaab                                                  ; $eb13 : $30, $96
 

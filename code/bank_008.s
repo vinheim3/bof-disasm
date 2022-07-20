@@ -13209,7 +13209,7 @@ br_08_ce27:
 	phx                                                  ; $ce2a : $da
 	jsr $e2ed10.l                                                  ; $ce2b : $22, $10, $ed, $e2
 	jsr Call_08_fd90.w                                                  ; $ce2f : $20, $90, $fd
-	sep #$20.b                                                  ; $ce32 : $e2, $20
+	sep #ACCU_8                                                  ; $ce32 : $e2, $20
 	.db $d0, $fd                                                  ; $ce34 : $d0, $fd
 
 	cmp ($20)                                                  ; $ce36 : $d2, $20
